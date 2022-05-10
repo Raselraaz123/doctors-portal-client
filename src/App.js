@@ -1,15 +1,17 @@
-
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import About from "./Pages/About/About";
+import Home from "./Pages/Home/Home";
+import Navbar from "./Pages/Shared/Navbar";
 
 function App() {
   return (
     <div>
-      <button class="btn btn-primary">Button</button>
-      <br />
-      <input type="checkbox" checked="checked" class="checkbox checkbox-md" />
-      <a href="/home">home</a>
-      
-      
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Routes>
     </div>
   );
 }
