@@ -4,14 +4,14 @@ import appointment from '../../assets/images/appointment.png'
 import BtnPrimary from '../Shared/BtnPrimary';
 const Banner3 = () => {
   return (
-    <div style={{
-      background:`url(${appointment})`
-    }}
-    className="flex justify-center items-center mt-28"
+    <div
+      style={{
+        background: `url(${appointment})`,
+      }}
+      className="flex justify-center items-center mt-28"
     >
-     
       <div class="flex-1 hidden lg:block">
-        <img className='mt-[-100px]'  src={doctor_small} />
+        <img className="mt-[-100px]" src={doctor_small} />
       </div>
       <div className="text-white flex-1 px-4">
         <h1 class=" font-bold text-primary ">Appointment</h1>
@@ -21,7 +21,7 @@ const Banner3 = () => {
           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
           id nisi.
         </p>
-        <BtnPrimary></BtnPrimary>
+        <BtnPrimary>GET STARTED</BtnPrimary>
       </div>
     </div>
   );
