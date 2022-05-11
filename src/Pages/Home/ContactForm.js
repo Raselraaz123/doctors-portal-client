@@ -9,6 +9,7 @@ const ContactForm = () => {
       style={{
         background: `url(${appointment})`,
       }}
+      className='mb-14 p-20'
     >
       <div className="w-1/2 mx-auto ">
         <div className="text-center">

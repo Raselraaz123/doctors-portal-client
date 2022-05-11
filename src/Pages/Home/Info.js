@@ -1,6 +1,6 @@
-import React from 'react';
-import InfoCard from './InfoCard';
-import clock from '../../assets/icons/clock.svg'
+import React from "react";
+import InfoCard from "./InfoCard";
+import clock from "../../assets/icons/clock.svg";
 import marker from "../../assets/icons/marker.svg";
 import phone from "../../assets/icons/phone.svg";
 const Info = () => {
@@ -12,7 +12,7 @@ const Info = () => {
         img={clock}
       ></InfoCard>
       <InfoCard
-        bgClass="bg-neutral"
+        bgClass="bg-accent"
         cartTitle="Visit our location"
         img={marker}
       ></InfoCard>
