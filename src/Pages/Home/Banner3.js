@@ -13,7 +13,7 @@ const Banner3 = () => {
       <div className="flex-1 hidden lg:block">
         <img className="mt-[-100px]" src={doctor_small} />
       </div>
-      <div className="text-white flex-1 px-4">
+      <div className="text-white flex-1 px-4 py-5">
         <h1 className=" font-bold text-primary ">Appointment</h1>
         <h1 className="text-3xl font-bold ">Make an appointment Today</h1>
         <p className="py-6">
