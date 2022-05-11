@@ -1,5 +1,5 @@
 import React from 'react';
-import doctor from '../../assets/images/doctor.png'
+import doctor_small from '../../assets/images/doctor_small.png'
 import appointment from '../../assets/images/appointment.png'
 import BtnPrimary from '../Shared/BtnPrimary';
 const Banner3 = () => {
@@ -7,11 +7,11 @@ const Banner3 = () => {
     <div style={{
       background:`url(${appointment})`
     }}
-    className="flex justify-center items-center"
+    className="flex justify-center items-center mt-28"
     >
      
       <div class="flex-1 hidden lg:block">
-        <img className='mt-[-100px]'  src={doctor} />
+        <img className='mt-[-100px]'  src={doctor_small} />
       </div>
       <div className="text-white flex-1 px-4">
         <h1 class=" font-bold text-primary ">Appointment</h1>
