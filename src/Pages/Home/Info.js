@@ -12,7 +12,7 @@ const Info = () => {
         img={clock}
       ></InfoCard>
       <InfoCard
-        bgClass="bg-[#3A4256]"
+        bgClass="bg-gradient-to-r from-secondary to-primary"
         cartTitle="Visit our location"
         img={marker}
       ></InfoCard>
