@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-const useAdmin = user => {
+const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
-  const [adminLoading,setAdminLoading]=useState(true)
+  const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`, {
+      fetch(`https://mysterious-crag-06032.herokuapp.com/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
@@ -20,7 +20,7 @@ const useAdmin = user => {
         });
     }
   }, [user]);
-  return [admin,adminLoading]
-}
+  return [admin, adminLoading];
+};
 
 export default useAdmin;

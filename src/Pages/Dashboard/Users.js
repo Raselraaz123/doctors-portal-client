@@ -1,19 +1,23 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
-import UserRow from './UserRow';
+import React from "react";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
+import UserRow from "./UserRow";
 
 const Users = () => {
-  const { data:users,isLoading,refetch } = useQuery("users", () =>
-    fetch("http://localhost:5000/user", {
-      method: 'GET',
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
+    fetch("https://mysterious-crag-06032.herokuapp.com/user", {
+      method: "GET",
       headers: {
-        authorization:`Bearer ${localStorage.getItem('accessToken')}`
-      }
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     }).then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
   return (
     <div>

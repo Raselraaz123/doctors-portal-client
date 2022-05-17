@@ -1,36 +1,38 @@
-import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
+import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const MyAppointment = () => {
   const [appointment, setAppointment] = useState([]);
-  const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?patient=${user.email}`, {
-        method: 'GET',
-        headers: {
-          'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+      fetch(
+        `https://mysterious-crag-06032.herokuapp.com/booking?patient=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-      })
+      )
         .then((res) => {
-          console.log('res', res)
+          console.log("res", res);
           if (res.status === 401 || res.status === 403) {
-              signOut(auth);
-              localStorage.removeItem("accessToken");
-            navigate('/');
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
           }
-        return res.json()
+          return res.json();
         })
         .then((data) => {
-
-          setAppointment(data)
+          setAppointment(data);
         });
- }
-  },[user])
+    }
+  }, [user]);
   return (
     <div>
       <h2 className=" text-blue-400 text-2xl font-bold mb-3">
@@ -51,7 +53,6 @@ const MyAppointment = () => {
           <tbody>
             {appointment.map((a, index) => (
               <tr>
-           
                 <th>{index + 1}</th>
                 <td>{a.patientName}</td>
                 <td>{a.date}</td>
